@@ -44,9 +44,8 @@ via the following environment variables:
    REPL history. Whitespace will be trimmed from the value.
  - `NODE_REPL_HISTORY_SIZE` - Defaults to `1000`. Controls how many lines of
    history will be persisted if history is available. Must be a positive number.
- - `NODE_REPL_MODE` - May be any of `sloppy`, `strict`, or `magic`. Defaults
-   to `magic`, which will automatically run "strict mode only" statements in
-   strict mode.
+ - `NODE_REPL_MODE` - Either `sloppy` or `strict`. Defaults
+   to `sloppy`.
 
 ## Persistent History
 
@@ -279,13 +278,12 @@ the following values:
    returns the formatting (including coloring) to display. Defaults to
    `util.inspect`.
 
- - `replMode` - controls whether the repl runs all commands in strict mode,
-   default mode, or a hybrid mode ("magic" mode.) Acceptable values are:
+ - `replMode` - controls whether the repl runs all commands in strict mode or
+   default mode) Acceptable values are:
   * `repl.REPL_MODE_SLOPPY` - run commands in sloppy mode.
   * `repl.REPL_MODE_STRICT` - run commands in strict mode. This is equivalent to
   prefacing every repl statement with `'use strict'`.
-  * `repl.REPL_MODE_MAGIC` - attempt to run commands in default mode. If they
-  fail to parse, re-try in strict mode.
+
 
 You can use your own `eval` function if it has following signature:
 
